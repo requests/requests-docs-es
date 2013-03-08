@@ -1,20 +1,20 @@
-Requests: HTTP for Humans
-=========================
+Requests: HTTP para Humanos
+===========================
 
 
 .. image:: https://travis-ci.org/kennethreitz/requests.png?branch=master
         :target: https://travis-ci.org/kennethreitz/requests
 
-Requests is an Apache2 Licensed HTTP library, written in Python, for human
-beings.
+Requests es una librería HTTP licenciada bajo la licencia Apache2, escrita
+en Python, para seres humanos.
 
-Most existing Python modules for sending HTTP requests are extremely
-verbose and cumbersome. Python's builtin urllib2 module provides most of
-the HTTP capabilities you should need, but the api is thoroughly broken.
-It requires an enormous amount of work (even method overrides) to
-perform the simplest of tasks.
+La mayoría de los módulos de Python existentes para enviar peticiones HTTP
+son extremadamente verbosos y molestos. El módulo urllib2 incorporado en Python,
+ofrece la mayoría de las funcionalidades necesarias para HTTP, pero su *api* está
+completamente rota. Requiere de una gran cantidad de trabajo (incluso reimplementar
+métodos) para ejecutar las tareas más sencillas.
 
-Things shouldn't be this way. Not in Python.
+Las cosas no deberían ser así. No en Python.
 
 .. code-block:: pycon
 
@@ -26,57 +26,56 @@ Things shouldn't be this way. Not in Python.
     >>> r.text
     ...
 
-See `the same code, without Requests <https://gist.github.com/973705>`_.
+Ver `el mismo código, sin Requests <https://gist.github.com/973705>`_.
 
-Requests allow you to send HTTP/1.1 requests. You can add headers, form data,
-multipart files, and parameters with simple Python dictionaries, and access the
-response data in the same way. It's powered by httplib and `urllib3
-<https://github.com/shazow/urllib3>`_, but it does all the hard work and crazy
-hacks for you.
-
-
-Features
---------
-
-- International Domains and URLs
-- Keep-Alive & Connection Pooling
-- Sessions with Cookie Persistence
-- Browser-style SSL Verification
-- Basic/Digest Authentication
-- Elegant Key/Value Cookies
-- Automatic Decompression
-- Unicode Response Bodies
-- Multipart File Uploads
-- Connection Timeouts
-- Thread-safety
+Requests permite enviar peticiones HTTP/1.1. Puedes agregar cabeceras, datos de
+formularios, archivos multiparte y parámetros con simples diccionarios de Python, y
+accesar la información de respuesta de la misma manera. Requests utiliza httplib y 
+`urllib3 <https://github.com/shazow/urllib3>`_, pero realiza todo el trabajo 
+difícil y los hacks extraños por tí.
 
 
-Installation
-------------
+Características
+---------------
 
-To install requests, simply:
+- URLs y Dominios internacionales
+- *Keep-Alive* & Agrupamiento de conexiones (*Connection* *Pooling*) 
+- Sesiones con Cookies persistentes
+- Verificación SSL al estilo navegador
+- Autenticación Básica y Digest
+- Elegantes Cookies en pares Llave/Valor
+- Descompresión automática
+- Cuerpos de respuestas Unicode
+- Subida de archivos Multiparte
+- Tiempos de espera de conexión
+- Seguridad para programación en hilos (*Thread-safety*)
 
-.. code-block:: bash
+
+Instalación
+-----------
+
+Para instalar Requests, simplemente:
+
+.. code-block:: bash                                         
 
     $ pip install requests
 
-Or, if you absolutely must:
+También, si es absolutamente necesario:
 
 .. code-block:: bash
 
     $ easy_install requests
 
-But, you really shouldn't do that.
+Pero realmente no deberías hacer eso.
 
 
-
-Contribute
+Contribuye
 ----------
 
-#. Check for open issues or open a fresh issue to start a discussion around a feature idea or a bug. There is a Contributor Friendly tag for issues that should be ideal for people who are not very familiar with the codebase yet.
-#. Fork `the repository`_ on Github to start making your changes to the **master** branch (or branch off of it).
-#. Write a test which shows that the bug was fixed or that the feature works as expected.
-#. Send a pull request and bug the maintainer until it gets merged and published. :) Make sure to add yourself to AUTHORS_.
+#. Busca temas abiertos o abre un tema nuevo para comenzar una discusión sobre una idea o un bug. Existe una etiqueta llamada *Contributor* *Friendly* (Amigable al Contribuyente), la cual es ideal para personas que aún no están familiarizadas con el código fuente.
+#. Haz un *Fork* `al repositorio`_ en Github para empezar a realizarle cambios a la rama principal (*master* *branch*)  (o crea otra rama a partir de ella).
+#. Escribe una prueba que demuestre que el bug ha desaparecido o que la nueva característica funciona como se esperaba.
+#. Envía un *pull* *request* y molesta al mantenedor hasta que sea mergido y publicado. :) Asegúrate de agregarte a la lista de autores AUTHORS_.
 
-.. _`the repository`: http://github.com/kennethreitz/requests
+.. _`al repositorio`: http://github.com/kennethreitz/requests
 .. _AUTHORS: https://github.com/kennethreitz/requests/blob/master/AUTHORS.rst
