@@ -1,58 +1,60 @@
 .. _faq:
 
-Frequently Asked Questions
-==========================
+Preguntas Frecuentes
+===================
 
-This part of the documentation answers common questions about Requests.
+Esta parte de la documentación responde preguntas comunes acerca de Requests.
 
-Encoded Data?
--------------
-
-Requests automatically decompresses gzip-encoded responses, and does
-its best to decode response content to unicode when possible.
-
-You can get direct access to the raw response (and even the socket),
-if needed as well.
-
-
-Custom User-Agents?
+¿Datos Codificados?
 -------------------
 
-Requests allows you to easily override User-Agent strings, along with
-any other HTTP Header.
+Requests descomprime automáticamente respuestas codificadas con gzip, y 
+hace su mejor esfuerzo por decodificar el contenido de la respuesta a unicode,
+cuando es posible.
+
+También puedes tener acceso directo a la respuesta cruda (e incluso al socket)
+de ser necesario.
 
 
-Why not Httplib2?
------------------
+¿Agentes de usuario propios?
+----------------------------
 
-Chris Adams gave an excellent summary on
+Requests te permite reimplementar las cadenas del Agente de usuario, al 
+igual que cualquier otra cabecera HTTP.
+
+
+¿Por qué no Httplib2?
+---------------------
+
+Chris Adams dió un excelente resumen en
 `Hacker News <http://news.ycombinator.com/item?id=2884406>`_:
 
-    httplib2 is part of why you should use requests: it's far more respectable
-    as a client but not as well documented and it still takes way too much code
-    for basic operations. I appreciate what httplib2 is trying to do, that
-    there's a ton of hard low-level annoyances in building a modern HTTP
-    client, but really, just use requests instead. Kenneth Reitz is very
-    motivated and he gets the degree to which simple things should be simple
-    whereas httplib2 feels more like an academic exercise than something
-    people should use to build production systems[1].
+    httplib2 es parte del porque debes usar requests: es mucho más respetable
+    como cliente pero no está tan bien documentado y aún requiere de mucho código
+    para realizar las operaciones básicas. Aprecio lo que httplib2 intenta realizar, 
+    existe un buen número de molestias de bajo nivel a la hora de crear un cliente
+    HTTP moderno, pero en serio, simplemente utiliza requests. Kenneth Reitz está
+    motivado y entiende el grado al que las cosas simples deben ser simples, mientras
+    que httplib2 se siente más como un ejercicio académico en lugar de algo que las
+    personas deberían utilizar para desarrollar sistemas de producción[1]
 
-    Disclosure: I'm listed in the requests AUTHORS file but can claim credit
-    for, oh, about 0.0001% of the awesomeness.
+    Divulgación: Estoy en la lista de autores de requests, pero solamente me puedo
+    dar crédito por alrededor del 0.0001% de su genialidad.
+    
+    1. http://code.google.com/p/httplib2/issues/detail?id=96 es un buen ejemplo:
+    un molesto bug que afectaba a muchas personas, para el cual había una solución
+    desde hace meses, esta solución funcionó estupendamente cuando la apliqué a
+    un *fork* y pude moler un par de TB de información con ella, pero tardó
+    más de un año para que llegara a *trunk* y aún más para que llegara a PyPI
+    donde cualquier otro proyecto que requería "httplib2" obtendría la versión 
+    funcional.
 
-    1. http://code.google.com/p/httplib2/issues/detail?id=96 is a good example:
-    an annoying bug which affect many people, there was a fix available for
-    months, which worked great when I applied it in a fork and pounded a couple
-    TB of data through it, but it took over a year to make it into trunk and
-    even longer to make it onto PyPI where any other project which required "
-    httplib2" would get the working version.
 
+¿Soporte para Python 3?
+-----------------------
 
-Python 3 Support?
------------------
-
-Yes! Here's a list of Python platforms that are officially
-supported:
+¡Sí! Esta es una lista de plataformas de Python que están
+soportadas oficialmente:
 
 * Python 2.6
 * Python 2.7
