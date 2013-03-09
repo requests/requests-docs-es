@@ -1,20 +1,21 @@
 .. _api:
 
-Developer Interface
-===================
+Interfaz para Desarrolladores
+=============================
 
 .. module:: requests
 
-This part of the documentation covers all the interfaces of Requests.  For
-parts where Requests depends on external libraries, we document the most
-important right here and provide links to the canonical documentation.
+Esta parte de la documentación cubre todas las interfaces de Requests. En 
+las partes donde Requests depende de librerías externas, hemos documentado
+las más importantes aquí mismo, y proveemos enlaces a la documentación
+canónica.
 
 
-Main Interface
---------------
+Interfaz Principal
+------------------
 
-All of Request's functionality can be accessed by these 7 methods.
-They all return an instance of the :class:`Response <Response>` object.
+Se puede acceder a todas las funcionalidades de Requests a través de estos 7
+métodos. Todos ellos devuelven una instancia de :class: `Response <Response>`.
 
 .. autofunction:: request
 
@@ -26,8 +27,8 @@ They all return an instance of the :class:`Response <Response>` object.
 .. autofunction:: delete
 
 
-Lower-Level Classes
-~~~~~~~~~~~~~~~~~~~
+Clases de bajo nivel
+~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: requests.Request
    :inherited-members:
@@ -42,8 +43,8 @@ Request Sessions
    :inherited-members:
 
 
-Exceptions
-~~~~~~~~~~
+Excepciones
+~~~~~~~~~~~
 
 .. module:: requests
 
@@ -54,8 +55,8 @@ Exceptions
 .. autoexception:: TooManyRedirects
 
 
-Status Code Lookup
-~~~~~~~~~~~~~~~~~~
+Búsqueda de Códigos de Estado
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autofunction:: requests.codes
 
@@ -78,8 +79,8 @@ Cookies
 .. autofunction:: add_dict_to_cookiejar
 
 
-Encodings
-~~~~~~~~~
+Codificaciones
+~~~~~~~~~~~~~~
 
 .. autofunction:: get_encodings_from_content
 .. autofunction:: get_encoding_from_headers
@@ -87,8 +88,8 @@ Encodings
 .. autofunction:: decode_gzip
 
 
-Classes
-~~~~~~~
+Clases
+~~~~~~
 
 .. autoclass:: requests.Response
    :inherited-members:
@@ -105,17 +106,17 @@ Classes
    :inherited-members:
 
 
-Migrating to 1.x
-----------------
+Migrando a 1.x
+--------------
 
-This section details the main differences between 0.x and 1.x and is meant
-to ease the pain of upgrading.
+Esta sección expone las diferencias principales entre 0.x y 1.x, y pretende
+facilitar las molestias al hora de actualizar.
 
 
-API Changes
-~~~~~~~~~~~
+Cambios en el API
+~~~~~~~~~~~~~~~~~
 
-* ``Response.json`` is now a callable and not a property of a response.
+* ``Response.json`` ahora es un invocable y no una propiedad de una respuesta.
 
   ::
 
@@ -123,9 +124,9 @@ API Changes
       r = requests.get('https://github.com/timeline.json')
       r.json()   # This *call* raises an exception if JSON decoding fails
 
-* The ``Session`` API has changed. Sessions objects no longer take parameters.
-  ``Session`` is also now capitalized, but it can still be
-  instantiated with a lowercase ``session`` for backwards compatibility.
+* El API de ``Session`` ha cambiado. Los objetos ``Session`` ya no reciben parámetros.
+  ``Session`` se escribe ahora con mayúscula, pero aún puede ser instanciado como 
+  ``session`` en minúscula, por razones de compatibilidad hacia atrás.
 
   ::
 
@@ -134,43 +135,43 @@ API Changes
       s.headers.update(headers)
       r = s.get('http://httpbin.org/headers')
 
-* All request hooks have been removed except 'response'.
+* Todos los *hooks* de petición han sido eliminados, con excepción de 'response'.
 
-* Authentication helpers have been broken out into separate modules. See
-  requests-oauthlib_ and requests-kerberos_.
+* Los ayudantes de autenticación han sido separados en módulos independientes. Ver
+  requests-oauthlib_ y requests-kerberos_.
 
 .. _requests-oauthlib: https://github.com/requests/requests-oauthlib
 .. _requests-kerberos: https://github.com/requests/requests-kerberos
 
-* The parameter for streaming requests was changed from ``prefetch`` to
-  ``stream`` and the logic was inverted. In addition, ``stream`` is now
-  required for raw response reading.
+* El parámetro para realizar peticiones de *streaming* ha cambiado de ``prefetch``
+  a ``stream`` y la lógica ha sido invertida. Adicionalmente, ``stream`` ahora es
+  obligatorio para leer respuestas en crudo.
 
   ::
 
-      # in 0.x, passing prefetch=False would accomplish the same thing
+      # en 0.x, pasar prefetch=False haría lo mismo que
       r = requests.get('https://github.com/timeline.json', stream=True)
       r.raw.read(10)
 
-* The ``config`` parameter to the requests method has been removed. Some of
-  these options are now configured on a ``Session`` such as keep-alive and
-  maximum number of redirects. The verbosity option should be handled by
-  configuring logging.
+* El parámetro ``config`` en los métodos de peticiones ha sido eliminado. Algunas de
+  estas opciones ahora se configuran en una sesión ``Session``, tal como *keep-alive* y
+  el número máximo de redirecciones. La opción de verbosidad debe ser manipulada
+  configurando las opciones de registro (*logging*).
 
   ::
 
-      # Verbosity should now be configured with logging
+      # La verbosidad se configura usando logging
       my_config = {'verbose': sys.stderr}
-      requests.get('http://httpbin.org/headers', config=my_config)  # bad!
+      requests.get('http://httpbin.org/headers', config=my_config)  # mal!
 
 
-Licensing
-~~~~~~~~~
+Licenciamiento
+~~~~~~~~~~~~~~
 
-One key difference that has nothing to do with the API is a change in the
-license from the ISC_ license to the `Apache 2.0`_ license. The Apache 2.0
-license ensures that contributions to requests are also covered by the Apache
-2.0 license.
+Una diferencia clave que no tiene nada que ver con el API, es el cambio en la
+licencia, la cambió de la licencia ISC_, a la licencia `Apache 2.0`_. La licencia
+Apache 2.0 asegura que las contribuciones a Requests, también estén cubiertas por
+la licencia Apache 2.
 
 .. _ISC: http://opensource.org/licenses/ISC
 .. _Apache 2.0: http://opensource.org/licenses/Apache-2.0
