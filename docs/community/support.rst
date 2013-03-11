@@ -1,37 +1,39 @@
 .. _support:
 
-Support
+Soporte
 =======
 
-If you have a questions or issues about Requests, there are several options:
+Si tienes alguna pregunta o problemas relacionados con Requests, existen algunas
+opciones:
 
-Send a Tweet
-------------
+Envía un Tweet
+--------------
 
-If your question is less than 140 characters, feel free to send a tweet to
+Si tu pregunta tiene menos de 140 caracteres, no dudes en enviar un tweet a 
 `@kennethreitz <http://twitter.com/kennethreitz>`_.
 
 
-File an Issue
--------------
+Reporta un problema
+-------------------
 
-If you notice some unexpected behavior in Requests, or want to see support
-for a new feature,
-`file an issue on GitHub <https://github.com/kennethreitz/requests/issues>`_.
+Si observas algún comportamiento inesperado en Requests, o quieres que
+alguna característica nueva sea soportada,
+`reporta el problema en GitHub <https://github.com/kennethreitz/requests/issues>`_.
 
 
 E-mail
 ------
 
-I'm more than happy to answer any personal or in-depth questions about
-Requests. Feel free to email
+Estoy encantado de responder cualquier pregunta de carácter personal, o preguntas
+a fondo acerca de Requests. No dude en escribir a
 `requests@kennethreitz.com <mailto:requests@kennethreitz.com>`_.
 
 
 IRC
 ---
 
-The official Freenode channel for Requests is
+El canal oficial de Requests en Freenode es
 `#python-requests <irc://irc.freenode.net/python-requests>`_
 
-I'm also available as **kennethreitz** on Freenode.
+También estoy disponible como **kennethreitz** en Freenode.
+
