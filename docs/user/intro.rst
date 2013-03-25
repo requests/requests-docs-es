@@ -1,45 +1,46 @@
 .. _introduction:
 
-Introduction
+Introducción
 ============
 
-Philosophy
-----------
+Filosofía
+---------
 
-Requests was developed with a few :pep:`20` idioms in mind.
+Requests fue desarrollado al estilo :pep:`20`.
 
 
-#. Beautiful is better than ugly.
+#. Hermoso es mejor que feo.
 #. Explicit is better than implicit.
-#. Simple is better than complex.
-#. Complex is better than complicated.
-#. Readability counts.
+#. Explícito es mejor que implícito.
+#. Complejo es mejor que complicado.
+#. La legibilidad cuenta.
 
-All contributions to Requests should keep these important rules in mind.
+Todas las contribuciones a Requests deben tener en cuenta estas reglas.
 
 .. _`apache2`:
 
-Apache2 License
------------
-
-A large number of open source projects you find today are `GPL Licensed`_.
-While the GPL has its time and place, it should most certainly not be your
-go-to license for your next open source project.
-
-A project that is released as GPL cannot be used in any commercial product
-without the product itself also being offered as open source.
-
-The MIT, BSD, ISC, and Apache2 licenses are great alternatives to the GPL
-that allow your open-source software to be used freely in proprietary,
-closed-source software.
-
-Requests is released under terms of `Apache2 License`_.
-
-.. _`GPL Licensed`: http://www.opensource.org/licenses/gpl-license.php
-.. _`Apache2 License`: http://opensource.org/licenses/Apache-2.0
-
-
-Requests License
+Licencia Apache2
 ----------------
 
+Hoy en día, encuentras un buen número de proyectos open source que son 
+`licenciados bajo GPL`_. Aunque GPL tiene su tiempo y lugar, esta licencia
+no es la que debes utilizar para tu próximo proyecto open source.
+
+Un proyecto publicado como GPL no puede ser utilizado en ningún producto comercial
+que no sea también open source.
+
+Las licencias MIT, BSD, ISC y Apache2 son buenas alternativas a la GPL,
+estas permiten que tu proyecto open source sea utilizado libremente en
+software propietario y *closed-source*.
+
+Requests está publicado bajo los términos de la `Licencia Apache2`_.
+
+.. _`licenciados bajo GPL`: http://www.opensource.org/licenses/gpl-license.php
+.. _`Licencia Apache2`: http://opensource.org/licenses/Apache-2.0
+
+
+Licencia de Requests
+--------------------
+
     .. include:: ../../LICENSE
+
