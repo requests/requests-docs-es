@@ -1,41 +1,52 @@
-Development Philosophy
-======================
+Filosofía del desarrollo
+========================
 
-Requests is an open but opinionated library, created by an open but opinionated developer.
+Requests es una librería abierta pero es dogmática, creada por un desarrollador abierto pero con
+opiniones propias.
 
 
-Benevolent Dictator
-~~~~~~~~~~~~~~~~~~~
+Dictador Benevolente (*Benevolent Dictador*)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Kenneth Reitz <http://kennethreitz.org>`_ is the BDFL. He has final say in any decision related to Requests.
+`Kenneth Reitz <http://kennethreitz.org>`_ es el Dictador Benevolente de por vida, BDFL. Él tiene la última palabra en
+cualquier decisión relacionada con Requests.
 
-Values
-~~~~~~
 
-- Simplicity is always better than functionality.
-- Listen to everyone, then disregard it.
-- The API is all that matters. Everything else is secondary.
-- Fit the 90% use-case. Ignore the nay-sayers.
+Valores
+~~~~~~~
 
-Semantic Versioning
-~~~~~~~~~~~~~~~~~~~
+- Simplicidad siempre es mejor que funcionalidad.
+- Escucha a todos, luego has caso omiso de ello.
+- El API es todo lo que importa. Todo lo demás es secundario.
+- Ajústate al 90% de los casos de uso. Ignora a los pocos que llevan la contraria.
 
-For many years, the open source community has been plagued with version number dystonia. Numbers vary so greatly from project to project, they are practically meaningless.
 
-Requests uses `Semantic Versioning <http://semver.org>`_. This specification seeks to put an end to this madness with a small set of practical guidelines for you and your colleagues to use in your next project.
+Versionado semántico
+~~~~~~~~~~~~~~~~~~~~
 
-Standard Library?
-~~~~~~~~~~~~~~~~~
+Por muchos años, la comunidad open source ha estado plagada con algún tipo de distonía en lo que se refiere a la numeración de versiones, las cuales 
+no tienen ningún sentido práctico. 
 
-Requests has no *active* plans to be included in the standard library. This decision has been discussed at length with Guido as well as numerous core developers.
+Requests usa `Versionado Semántico (*Semantic Versioning*) <http://semver.org>`_. Está especificación tiene como objetivo poner fín a este sinsentido por medio 
+de un conjunto pequeño de reglas prácticas que usted y sus colegas pueden usar en sus proyectos.
+
+
+Librería Estándar?
+~~~~~~~~~~~~~~~~~~
+
+Requests no tiene ningún plan *activo* para ser incluído en la librería estándar. Esta decisión ha sido ampliamente discutida con Guido, así como
+un buen número de desarrolladores del núcleo de Python.
 
 Essentially, the standard library is where a library goes to die. It is appropriate for a module to be included when active development is no longer necessary.
 
-Requests just reached v1.0.0. This huge milestone marks a major step in the right direction.
+Requests acaba de llegar a su versión 1.0.0. Esto es un gran avance, y marca un paso en la dirección correcta.
 
-Linux Distro Packages
-~~~~~~~~~~~~~~~~~~~~~
 
+Paquetes en Distros de Linux
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Se han hecho algunas distribuciones para algunos repositorios de Linux incluyendo: Ubuntu, Debian, RHEL, y Arch.
 Distributions have been made for many Linux repositories, including: Ubuntu, Debian, RHEL, and Arch.
 
-These distributions are sometimes divergent forks, or are otherwise not kept up-to-date with the latest code and bugfixes. PyPI (and its mirrors) and GitHub are the official distribution sources; alternatives are not supported by the requests project.
+Estas distribuciones por lo general corresponden a *forks* que divergen del principal, o en otros casos no siempre están actualizados con el último código y sus mejoras.
+PyPI (y sus mirrors) y GitHub son la fuente oficial de distribución; otras alternativas no están soportadas en este proyecto.
