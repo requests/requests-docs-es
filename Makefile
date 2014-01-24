@@ -1,30 +1,43 @@
-SHELL := /bin/bash
+.PHONY: docs
+
+init:
+	pip install -r requirements.txt
 
 test:
 	py.test
 
-test-deps:
-	pip install -r requirements.txt
+coverage:
+	py.test --verbose --cov-report term --cov=requests test_requests.py
 
-six:
-	python test_requests.py
-	python3 test_requests.py
+ci: init
+	py.test --junitxml=junit.xml
 
-deps: urllib3 certs charade
+certs:
+	curl http://ci.kennethreitz.org/job/ca-bundle/lastSuccessfulBuild/artifact/cacerts.pem -o requests/cacert.pem
+
+deps: urllib3 chardet
 
 urllib3:
 	rm -fr requests/packages/urllib3
 	git clone https://github.com/shazow/urllib3.git
-	cd urllib3 && git checkout master && cd ..
 	mv urllib3/urllib3 requests/packages/
 	rm -fr urllib3
 
-charade:
-	rm -fr requests/packages/charade
-	git clone https://github.com/sigmavirus24/charade.git
-	cd charade && git checkout master && cd ..
-	mv charade/charade requests/packages/
-	rm -fr charade
+chardet:
+	rm -fr requests/packages/chardet
+	git clone https://github.com/chardet/chardet.git
+	mv chardet/chardet requests/packages/
+	rm -fr chardet
 
-certs:
-	cd requests && curl -O https://raw.github.com/kennethreitz/certifi/master/certifi/cacert.pem
+publish:
+	python setup.py register
+	python setup.py sdist upload
+	python setup.py bdist_wheel upload
+
+
+docs-init:
+	pip install -r docs/requirements.txt
+
+docs:
+	cd docs && make html
+	@echo "\033[95m\n\nBuild successful! View the docs homepage at docs/_build/html/index.html.\n\033[0m"

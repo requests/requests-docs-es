@@ -3,13 +3,13 @@
 Soporte
 =======
 
-Si tienes alguna pregunta o problemas relacionados con Requests, existen algunas
-opciones:
+Si tienes alguna pregunta o problemas relacionados con Requests, existen
+algunas opciones:
 
 Envía un Tweet
 --------------
 
-Si tu pregunta tiene menos de 140 caracteres, no dudes en enviar un tweet a 
+Si tu pregunta tiene menos de 140 caracteres, no dudes en enviar un tweet a
 `@kennethreitz <http://twitter.com/kennethreitz>`_.
 
 
@@ -24,8 +24,8 @@ alguna característica nueva sea soportada,
 E-mail
 ------
 
-Estoy encantado de responder cualquier pregunta de carácter personal, o preguntas
-a fondo acerca de Requests. No dude en escribir a
+Estoy encantado de responder cualquier pregunta de carácter personal, o
+preguntas a fondo acerca de Requests. No dude en escribir a
 `requests@kennethreitz.com <mailto:requests@kennethreitz.com>`_.
 
 

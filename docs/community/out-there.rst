@@ -4,25 +4,22 @@ Integraciones
 ScraperWiki
 ------------
 
-`ScraperWiki <https://scraperwiki.com/>`_ es un excelente servicio que permite
-ejecutar en la web *scrappers* escritos en Python, Ruby y PHP. Ahora, Requests 
-v0.6.1 está disponible para usar en tus *scrappers*!
+`ScraperWiki <https://scraperwiki.com/>`_ es un excelente servicio que
+permite ejecutar en la web *scrappers* escritos en Python, Ruby y PHP.
+Ahora, Requests v0.6.1 está disponible para usar en tus *scrappers*!
 
 Para probar, simplemente::
-    
+
     import requests
-    
+
 Python para iOS
 ---------------
 
 Requests está incorporado en `Python para iOS <https://itunes.apple.com/us/app/python-2.7-for-ios/id485729872?mt=Python8>`_
 
 Para probar, simplemente::
-    
-    import requests
 
-Python for iOS
---------------
+    import requests
 
 
 Artículos y Charlas

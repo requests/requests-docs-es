@@ -10,8 +10,8 @@ Requests fue desarrollado al estilo :pep:`20`.
 
 
 #. Hermoso es mejor que feo.
-#. Explicit is better than implicit.
 #. Explícito es mejor que implícito.
+#. Simple es mejor que complejo.
 #. Complejo es mejor que complicado.
 #. La legibilidad cuenta.
 
@@ -22,16 +22,16 @@ Todas las contribuciones a Requests deben tener en cuenta estas reglas.
 Licencia Apache2
 ----------------
 
-Hoy en día, encuentras un buen número de proyectos open source que son 
+Hoy en día, encuentras un buen número de proyectos open source que son
 `licenciados bajo GPL`_. Aunque GPL tiene su tiempo y lugar, esta licencia
-no es la que debes utilizar para tu próximo proyecto open source.
+no es la que deberías usar para tu próximo proyecto open source.
 
-Un proyecto publicado como GPL no puede ser utilizado en ningún producto comercial
-que no sea también open source.
+Un proyecto publicado como GPL no puede ser utilizado en ningún producto
+comercial que no sea también open source.
 
 Las licencias MIT, BSD, ISC y Apache2 son buenas alternativas a la GPL,
-estas permiten que tu proyecto open source sea utilizado libremente en
-software propietario y *closed-source*.
+estas permiten que tu software open source sea utilizado libremente en
+software propietario y de fuentes cerradas (*closed-source*).
 
 Requests está publicado bajo los términos de la `Licencia Apache2`_.
 
