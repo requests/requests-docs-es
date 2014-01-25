@@ -8,12 +8,14 @@ Requests: HTTP para Humanos
 
 Versión v\ |version|. (:ref:`Installation <install>`)
 
-Requests es una librería para HTTP, ref:`licenciada bajo Apache2 <apache2>`, escrita en Python, para seres humanos.
+Requests es una librería para HTTP, ref:`licenciada bajo Apache2 <apache2>`,
+escrita en Python, para seres humanos.
 
-El módulo urllib2 que se encuentra en el estándar de Python, ofrece la mayoría de las funcionalidades necesarias para HTTP, 
-pero su api está completamente **rota**.
-Fue escrita para otra época, - y otra web. Requiere de una gran cantidad de trabajo (incluso reimplementar métodos)
-para ejecutar las tareas más sencillas.
+El módulo urllib2 que se encuentra en el estándar de Python, ofrece la
+mayoría de las funcionalidades necesarias para HTTP, pero su api está
+completamente **rota**. Fue construida para otra época, - y una web
+diferente--. Requiere una gran cantidad de trabajo (incluso reimplementar
+métodos) para ejecutar las tareas más sencillas.
 
 Las cosas no deberían ser así. No en Python.
 
@@ -33,38 +35,45 @@ Las cosas no deberían ser así. No en Python.
 
 Ver `el mismo código, sin Requests <https://gist.github.com/973705>`_.
 
-Requests le quita las complicaciones de trabajar HTTP/1.1 en Python - haciendo que la integración con servicios web sea transparente. No hay necesidad de agregar
-queries a tus URLs manualmente, o convertir tu información a formularios para hacer una petición POST. Creación de conexiones keep-alive y reutilización de conexiones HTTP 
-se hace automáticamente, todo gracias a `urllib3 <https://github.com/shazow/urllib3>`_, el cual está integrado en Requests.
+Requests quita las complicaciones de trabajar HTTP/1.1 en Python -
+haciendo que la integración con servicios web sea transparente. No hay
+necesidad de agregar queries a tus URLs manualmente, o convertir tu
+información a formularios para hacer una petición POST. La reutilización
+de keep-alive y conexión HTTP se hace automáticamente, todo gracias a `urllib3 <https://github.com/shazow/urllib3>`_, el cual está integrado en Requests.
 
 
 Testimonios
 -----------
 
-El gobierno de su Majestad, Amazon, Google, Twilio, Mozilla, Heroku, PayPal, NPR, Obama for America, Transifex, Native Instruments, The Washington Post, Twitter, SoundClound, 
-Kippt, Readability, y algunas organizaciones Federales de los Estados Unidos de América, utilizan Requests internamente. Ha sido descargado más de 3,000,000 de veces desde PyPI.
+El gobierno de su Majestad, Amazon, Google, Twilio, Mozilla, Heroku, PayPal,
+NPR, Obama for America, Transifex, Native Instruments, The Washington Post,
+Twitter, SoundClound, Kippt, Readability y algunas organizaciones Federales
+de los Estados Unidos de América utilizan Requests internamente. Ha sido
+descargado más de 8,000,000 de veces desde PyPI.
 
 **Armin Ronacher**
-    Requests es el ejemplo perfecto de cómo una API puede hermosa si tiene
-    el nivel correcto de abstracción
+    Requests es el ejemplo perfecto de qué tan hermosa pueder ser una API
+    con el nivel correcto de abstracción.
 
 **Matt DeBoard**
-    Voy a tatuarme el módulo de Python Requests de @kennethreitz, 
+    Voy a tatuarme el módulo de Python Requests de @kennethreitz,
     en mi cuerpo, de alguna forma. Todo completo.
 
 **Daniel Greenfeld**
-    Eliminé una librería de 1200 líneas de código enredado, con unas 10 líneas
-    de código gracias a la librería Requests de @kennethreitz. Hoy a sido un día GENIAL.
+    Eliminé una librería de 1200 líneas de código enredado, con unas 10
+    líneas de código gracias a la librería Requests de @kennethreitz. Hoy
+    ha sido un día GENIAL.
 
 **Kenny Meyers**
     Python HTTP: Cuando tengas dudas, o cuando no, usa Requests. Bonita, simple
     pytónica.
 
-Características
----------------
+Soporte Destacado
+-----------------
+Request está listo para al web de hoy
 
 - URLs y Dominios internacionales
-- *Keep-Alive* & Agrupamiento de conexiones (*Connection* *Pooling*) 
+- *Keep-Alive* y Agrupamiento de conexiones (*Connection* *Pooling*)
 - Sesiones con Cookies persistentes
 - Verificación SSL al estilo navegador
 - Autenticación Básica y Digest
@@ -73,15 +82,18 @@ Características
 - Cuerpos de respuestas Unicode
 - Subida de archivos Multiparte
 - Tiempos de espera de conexión
+- Soporte para `.netrc`
+- Python 2.6 -- 3.3
 - Seguridad para programación en hilos (*Thread-safety*)
 
 
 Guía de Usuario
 ---------------
 
-Esta parte de la documentación, la cual está compuesta de prosa en su mayoría, empieza
-dando información general acerca de Requests, luego se centra en instrucciones
-paso por paso de cómo utilizar la mayoría de funcionalidades que brinda Requests.
+Esta parte de la documentación, la cual está compuesta de prosa en su
+mayoría, empieza dando información general acerca de Requests, luego se
+centra en instrucciones paso por paso de cómo utilizar la mayoría de
+funcionalidades que brinda Requests.
 
 .. toctree::
    :maxdepth: 2
@@ -96,8 +108,8 @@ paso por paso de cómo utilizar la mayoría de funcionalidades que brinda Reques
 Guía para la comunidad
 ----------------------
 
-Esta parte de la documentación, la cual está compuesta de prosa en su mayoría, detalla
-el ecosistema alrededor de Requests y su comunidad.
+Esta parte de la documentación, la cual está compuesta de prosa en su
+mayoría, detalla el ecosistema alrededor de Requests y su comunidad.
 
 .. toctree::
    :maxdepth: 1
@@ -110,8 +122,8 @@ el ecosistema alrededor de Requests y su comunidad.
 Documentación del API
 ---------------------
 
-Si buscas información acerca de una función en específico, clase o método,
-está parte de la documentación es para tí.
+Si buscas información acerca de una función, clase o método en específico
+está parte de la documentación es para ti.
 
 .. toctree::
    :maxdepth: 2
@@ -122,12 +134,12 @@ está parte de la documentación es para tí.
 Guía del contribuidor
 ---------------------
 
-Si quieres contribuir con el proyecto, esta parte de la documentación es para tí.
+Si quieres contribuir con el proyecto, esta parte de la documentación es
+para ti.
 
 .. toctree::
    :maxdepth: 1
 
    dev/philosophy
-   dev/internals
    dev/todo
    dev/authors

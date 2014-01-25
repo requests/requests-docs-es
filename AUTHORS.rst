@@ -1,7 +1,8 @@
-Requests is written and maintained by Kenneth Reitz and
-various contributors:
+Requests es escrito y mantenido por Kenneth Reitz y varios
+contribuidores:
 
-Development Lead
+
+Líder de Desarrollo
 ````````````````
 
 - Kenneth Reitz <me@kennethreitz.com>
@@ -13,8 +14,8 @@ Urllib3
 - Andrey Petrov <andrey.petrov@shazow.net>
 
 
-Patches and Suggestions
-```````````````````````
+Parches y Sugerencias
+`````````````````````
 
 - Various Pocoo Members
 - Chris Adams
@@ -123,3 +124,27 @@ Patches and Suggestions
 - Denis Ryzhkov <denisr@denisr.com>
 - Wilfred Hughes <me@wilfred.me.uk> @dontYetKnow
 - Dmitry Medvinsky <me@dmedvinsky.name>
+- Bryce Boe <bbzbryce@gmail.com> @bboe
+- Colin Dunklau <colin.dunklau@gmail.com> @cdunklau
+- Bob Carroll <bob.carroll@alum.rit.edu> @rcarz
+- Hugo Osvaldo Barrera <hugo@osvaldobarrera.com.ar> @hobarrera
+- Łukasz Langa <lukasz@langa.pl> @llanga
+- Dave Shawley <daveshawley@gmail.com>
+- James Clarke (jam)
+- Kevin Burke <kev@inburke.com>
+- Flavio Curella
+- David Pursehouse <david.pursehouse@gmail.com> @dpursehouse
+- Jon Parise
+- Alexander Karpinsky @homm86
+- Marc Schlaich @schlamar
+- Park Ilsu <daftonshady@gmail.com> @daftshady
+- Matt Spitz @mattspitz
+- Vikram Oberoi @voberoi
+- Can Ibanoglu <can.ibanoglu@gmail.com> @canibanoglu
+- Thomas Weißschuh <thomas@t-8ch.de> @t-8ch
+- Jayson Vantuyl <jayson@aggressive.ly> @kagato
+- Pengfei.X <pengphy@gmail.com>
+- Kamil Madac <kamil.madac@gmail.com>
+- Michael Becker <mike@beckerfuffle.com> @beckerfuffle
+- Erik Wickstrom <erik@erikwickstrom.com> @erikwickstrom
+- Константин Подшумок @podshumok

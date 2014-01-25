@@ -9,7 +9,7 @@ el desarrollo de Requests:
 GitHub
 ------
 
-La mejor forma de seguir el desarrollo de Requests es en 
+La mejor forma de seguir el desarrollo de Requests es en
 `el repositorio en GitHub <https://github.com/kennethreitz/requests>`_.
 
 Twitter
@@ -27,4 +27,9 @@ Mailing List
 
 Existe una lista de correos para Requests. Para subscribirse envía un correo a
 `requests@librelist.org <mailto:requests@librelist.org>`_.
+
+Software Updates
+================
+
+.. include:: ../../HISTORY.rst
 

@@ -17,20 +17,27 @@ if sys.argv[-1] == 'publish':
 packages = [
     'requests',
     'requests.packages',
-    'requests.packages.charade',
+    'requests.packages.chardet',
     'requests.packages.urllib3',
     'requests.packages.urllib3.packages',
+    'requests.packages.urllib3.contrib',
     'requests.packages.urllib3.packages.ssl_match_hostname'
 ]
 
 requires = []
 
+with open('README.rst') as f:
+    readme = f.read()
+with open('HISTORY.rst') as f:
+    history = f.read()
+with open('LICENSE') as f:
+    license = f.read()
+
 setup(
     name='requests',
     version=requests.__version__,
     description='Python HTTP for Humans.',
-    long_description=open('README.rst').read() + '\n\n' +
-                     open('HISTORY.rst').read(),
+    long_description=readme + '\n\n' + history,
     author='Kenneth Reitz',
     author_email='me@kennethreitz.com',
     url='http://python-requests.org',
@@ -39,7 +46,7 @@ setup(
     package_dir={'requests': 'requests'},
     include_package_data=True,
     install_requires=requires,
-    license=open('LICENSE').read(),
+    license=license,
     zip_safe=False,
     classifiers=(
         'Development Status :: 5 - Production/Stable',
@@ -50,9 +57,7 @@ setup(
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        # 'Programming Language :: Python :: 3.0',
-        'Programming Language :: Python :: 3.1',
-        'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
+
     ),
 )

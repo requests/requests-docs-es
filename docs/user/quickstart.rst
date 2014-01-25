@@ -5,13 +5,14 @@ Quickstart
 
 .. module:: requests.models
 
-Ansioso por empezar? Esta página brinda una buena introducción sobre como empezar
-a utilizar Requests. Esta guía asume que ya tengas instalado Requests. Si aún no
-lo has hecho, ve a la sección :ref:`Instalación <install>`. 
+¿Ansioso por empezar? Esta página brinda una buena introducción sobre
+como empezar a utilizar Requests. Esta guía asume que ya tengas
+instalado Requests. Si aún no lo has hecho, ve a la sección
+:ref:`Instalación <install>`.
 
 Primero, asegúrate que:
 
-* Requests esté :ref:`instalado <install>` 
+* Requests esté :ref:`instalado <install>`
 * Requests esté :ref:`actualizado <updates>`
 
 
@@ -21,26 +22,27 @@ Empecemos con algunos ejemplos sencillos.
 Realizar un petición
 --------------------
 
-Realizar una petición en Requests es simple.
+Realizar una petición en Requests muy sencillo.
 
 Comienza importando el módulo de Requests::
 
     >>> import requests
 
-Ahora, intentemos obtener un página web. Para este ejemplo, vamos a obtener
-el timeline público de GitHub.::
+Ahora, intentemos obtener un página web. Para este ejemplo, vamos a
+obtener el timeline público de GitHub.::
 
     >>> r = requests.get('https://github.com/timeline.json')
 
-Ahora, tenemos un objeto :class:`Response` llamado ``r``. Y podemos obtener 
-toda la información que necesitamos a partir de este objeto.
+Ahora, tenemos un objeto :class:`Response` llamado ``r``. Podemos
+obtener  toda la información que necesitamos a partir de este objeto.
 
-En Requests, un API simple significa que todas las formas the peticiones HTTP 
-son obvias. Por ejemplo, así es como realizas una petición HTTP POST::
+En Requests, un API simple significa que todas las formas the peticiones
+HTTP son obvias. Por ejemplo, así es como realizas una petición HTTP
+POST::
 
     >>> r = requests.post("http://httpbin.org/post")
 
-Qué tal otros tipos de peticiones HTTP: PUT, DELETE, HEAD y OPTIONS? Todos
+¿Qué tal otros tipos de peticiones HTTP?: PUT, DELETE, HEAD y OPTIONS? Todos
 estos son igual de simples::
 
     >>> r = requests.put("http://httpbin.org/put")
@@ -54,13 +56,14 @@ Todo esto está bien, pero es solo el comienzo de lo que Requests puede hacer.
 Pasar parámetros en URLs
 ------------------------
 
-Con frecuencia, debes enviar algún tipo de información en el query string de
-la URL. Si estuvieses creando la URL a mano, esta información estaría en forma
-de pares llave/valor luego del signo de interrogación en la URL, por ejemplo
-``httpbin.org/get?key=val``. Requests te permite proveer estos argumentos en forma
-de diccionario, usando el parámetro en llave (*keyword argument*) ``params``.
-Como ejemplo, si quisieras pasar ``key1=value1`` y ``key2=value2`` a ``httpbin.org/get``,
-usarías algo como esto::
+Con frecuencia, debes enviar algún tipo de información en el *query
+string* de la URL. Si estuvieses creando la URL a mano, esta información
+estaría en forma de pares llave/valor luego del signo de interrogación en
+la URL, por ejemplo ``httpbin.org/get?key=val``. Requests te permite
+proveer estos argumentos en forma de diccionario, usando el parámetro en
+llave (*keyword argument*) ``params``. Como ejemplo, si quisieras pasar
+``key1=value1`` y ``key2=value2`` a ``httpbin.org/get``, usarías algo
+como esto::
 
     >>> payload = {'key1': 'value1', 'key2': 'value2'}
     >>> r = requests.get("http://httpbin.org/get", params=payload)
@@ -70,12 +73,14 @@ Puedes ver que la URL ha sido codificada correctamente imprimiéndola::
     >>> print r.url
     u'http://httpbin.org/get?key2=value2&key1=value1'
 
+Nota que cualquier llama del diccionario cuyo valor es ``None`` no será
+agregada al *query string* del URL.
 
 Contenido de respuesta
 ----------------------
 
-Podemos leer el contenido de la respuesta del servidor. Usemos del timeline
-de GitHub nuevamente:: 
+Podemos leer el contenido de la respuesta del servidor. Usemos el timeline
+de GitHub nuevamente::
 
     >>> import requests
     >>> r = requests.get('https://github.com/timeline.json')
@@ -85,20 +90,28 @@ de GitHub nuevamente::
 Requests automáticamente decodificará el contenido que viene del servidor.
 La mayoría de caracteres unicode serán decodificados correctamente.
 
-Cuando ejecutas una petición, Requests tratará de obtener la codificación de la
-respuesta basándose en las cabeceras HTTP. La codificación del texto que Requests
-halló (o supuso), será utilizada cuando se acceda a ``r.text``. Puedes conocer la codificación
-que Requests está utilizando, y cambiarla, usando la propiedad ``r.encoding``::
+Cuando ejecutas una petición, Requests tratará de obtener la codificación
+de la respuesta basándose en las cabeceras HTTP. La codificación del
+texto que Requests halló (o supuso), será utilizada cuando se acceda a
+``r.text``. Puedes conocer la codificación que Requests está utilizando,
+y cambiarla, usando la propiedad ``r.encoding``::
 
     >>> r.encoding
     'utf-8'
     >>> r.encoding = 'ISO-8859-1'
 
-Si cambias la codificación, Requests utilizará este nuevo valor de ``r.encoding``
-siempre que se llame ``r.text``.
+Si cambias la codificación, Requests utilizará este nuevo valor de
+``r.encoding`` siempre que se invoque a ``r.text``. Podrías querer hacer
+esto en cualquier situación donde puedas aplicar una lógica de trabajo
+especial para trabajar según la codificación que esté en el contenido.
+Por ejemplo, HTTP y XML tienen la habilidad de especificar su
+codificación en su cuerpo. En situaciones como esta, deberías usar
+``r.content`` para encontrar la codificación y después configuar
+``r.encoding``. Esto te permitirá usar ``r.text`` con la codifiación
+correcta.
 
 Requests también puede utilizar codificaciones del usuario, en caso de ser necesario.
-Si creaste tu propia codificación, y la has registrado usando el módulo ``codecs``, 
+Si creaste tu propia codificación, y la has registrado usando el módulo ``codecs``,
 puedes asignar el nombre de este codec como valor de ``r.encoding`` y Requests se
 encargará de la decodificación.
 
@@ -106,16 +119,17 @@ encargará de la decodificación.
 Contenidos de respuesta binarios
 --------------------------------
 
-También puedes acceder al cuerpo de la respuesta como bytes, para 
+También puedes acceder al cuerpo de la respuesta como bytes, para
 peticiones que no sean de texto::
 
     >>> r.content
     b'[{"repository":{"open_issues":0,"url":"https://github.com/...
 
-Las codificaciones ``gzip`` y ``deflate`` serán decodificadas automáticamente.
+Las codificaciones de transferencia ``gzip`` y ``deflate`` serán
+decodificadas automáticamente.
 
-Por ejemplo, para crear una imagen a partir de datos binarios en una respuesta,
-puedes usar el siguiente código::
+Por ejemplo, para crear una imagen a partir de datos binarios en una
+respuesta, puedes usar el siguiente código::
 
     >>> from PIL import Image
     >>> from StringIO import StringIO
@@ -126,22 +140,26 @@ Contenido de respuesta JSON
 ---------------------------
 
 También hay un decodificador de JSON incorporado en Requests, en caso de
-que estés trabajando con información en JSON::
+que estés trabajando con datos JSON::
 
     >>> import requests
     >>> r = requests.get('https://github.com/timeline.json')
     >>> r.json()
     [{u'repository': {u'open_issues': 0, u'url': 'https://github.com/...
 
-Si la decodificación falla, ``r.json`` levantará una excepción.
+Si la decodificación falla, ``r.json`` levantará una excepción. Por
+ejemplo, si la respuesta obtiene un código 401 (No Autorizado/
+Unauthorized), intentar ``r.json`` mandará una excepción
+``ValueError: No JSON object could be decoded``.
 
 
-Contenido de respuesta cruda
-----------------------------
+Contenido de respuesta en crudo
+-------------------------------
 
-En el caso extraño que quieras obtener la respuesta crude a nivel del socket,
-puedes acceder ``r.raw``. Si quieres hacer esto, asegúrate de pasar ``stream=True``
-en la petición inicial. Una vez hagas esto, puedes hacer lo siguiente::
+En el caso extraño que quieras obtener la respuesta en crudo a nivel
+socket, puedes acceder ``r.raw``. Si quieres hacer esto, asegúrate de
+pasar ``stream=True`` en la petición inicial. Una vez que hagas esto,
+puedes hacer lo siguiente::
 
     >>> r = requests.get('https://github.com/timeline.json', stream=True)
     >>> r.raw
@@ -149,6 +167,16 @@ en la petición inicial. Una vez hagas esto, puedes hacer lo siguiente::
     >>> r.raw.read(10)
     '\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x03'
 
+De manera general, sin embargo, deberías usar un patrón como este para
+guardar lo que se recibe del *stream* a un archivo::
+
+    with open(filename, 'wb') as fd:
+        for chunk in r.iter_content(chunk_size):
+            fd.write(chunk)
+
+Al usar ``Response.iter_content`` se manejará mucho de lo que deberías
+haber manipulado a mano usando ``Response.raw`` directamente. Lo de arriba
+es la forma preferida y recomendad de obtener el contenido obtenido
 
 Cabeceras personalizadas
 ------------------------
@@ -185,7 +213,7 @@ automáticamente como formulario al momento de realizar la petición::
       ...
     }
 
-Existen ocasiones en las que quieres enviar datos en otra codificación. Si pasas un ``string`` en vez de un ``dict``, 
+Existen ocasiones en las que quieres enviar datos en otra codificación. Si pasas un ``string`` en vez de un ``dict``,
 la información será posteada directamente.
 
 Por ejemplo, el API v3 de GitHub acepta información en forma de JSON POST/PATCH::
@@ -230,7 +258,7 @@ Puedes establecer el nombre del archivo explícitamente::
       ...
     }
 
-Si quieres, puedes enviar cadenas de caracteres para ser recividas
+Si quieres, puedes enviar cadenas de caracteres para ser recibidas
 como archivos::
 
     >>> url = 'http://httpbin.org/post'
@@ -246,6 +274,12 @@ como archivos::
       ...
     }
 
+Si estás enviando un archivo muy larga como una petición
+``multipart/form-data``, puedes querer hacer un *stream* de la petición.
+Por defecto, ``requests`` no lo soporta, pero hay un paquete separado
+que sí lo hace - ``requests-toolbelt``--. Deberías leer
+`la documentación de  toolbelt <https://toolbelt.rtfd.org>`_ para más
+detalles de cómo usarlo.
 
 Códigos de estado de respuesta
 ------------------------------
@@ -262,7 +296,7 @@ y pueden ser referenciados fácilmente::
     >>> r.status_code == requests.codes.ok
     True
 
-Si ejecutamos una petición mala (respuesta diferente a 200), podemos
+Si hacemos una mala petición (respuesta diferente a 200), podemos
 levantar una excepción con :class:`Response.raise_for_status()`::
 
     >>> bad_r = requests.get('http://httpbin.org/status/404')
@@ -275,7 +309,7 @@ levantar una excepción con :class:`Response.raise_for_status()`::
         raise http_error
     requests.exceptions.HTTPError: 404 Client Error
 
-Pero, debido a que nuestro ``status_code`` para ``r`` fue ``200``, 
+Pero, debido a que nuestro ``status_code`` para ``r`` fue ``200``,
 cuando llamamos ``raise_for_status()`` obtenemos::
 
     >>> r.raise_for_status()
@@ -302,7 +336,7 @@ diccionario::
         'content-type': 'application/json; charset=utf-8'
     }
 
-Este diccionario es especial: está hecho únicamente de cabeceras HTTP. De acuerdo 
+Este diccionario es especial: está hecho únicamente de cabeceras HTTP. De acuerdo
 con el `RFC 2616 <http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html>`_, las
 cabeceras HTTP no diferencian entre mayúsculas y minúsculas.
 
@@ -313,11 +347,6 @@ Así que podemos acceder a las cabeceras utilizando letras mayúsculas o minúsc
 
     >>> r.headers.get('content-type')
     'application/json; charset=utf-8'
-
-Si la cabecera no está en la respuesta, su valor será ``None`` por defecto::
-
-    >>> r.headers['X-Random']
-    None
 
 
 Cookies
@@ -345,11 +374,12 @@ parámetro ``cookies``::
 Historial y Redireccionamiento
 ------------------------------
 
-Requests realizará redireccionamiento para peticiones GET y OPTIONS automáticamente.
+Requests realizará redireccionamiento para peticiones par todos los verbos,
+excepto HEAD.
 
-GitHub redirecciona todas las peticiones HTTP hacia HTTPS. Podemos usar el método 
-``history`` del objeto ``Response`` para rastrear las redirecciones. Veamos los que
-GitHub hace::
+GitHub redirecciona todas las peticiones HTTP hacia HTTPS. Podemos usar
+el método ``history`` del objeto ``Response`` para rastrear las
+redirecciones. Veamos que hace GitHub::
 
     >>> r = requests.get('http://github.com')
     >>> r.url
@@ -359,8 +389,8 @@ GitHub hace::
     >>> r.history
     [<Response [301]>]
 
-La lista :class:`Response.history` contiene una lista de 
-objetos tipo :class:`Request` que fueron creados con el fín 
+La lista :class:`Response.history` contiene una lista de
+objetos tipo :class:`Request` que fueron creados con el fín
 de completar la petición. La lista está ordenada desde la petición
 más antigüa, hasta las más reciente.
 
@@ -373,8 +403,8 @@ usando el parámetro ``allow_redirects``::
     >>> r.history
     []
 
-Si estás utilizando POST, PUT, PATCH, DELETE o HEAD, puedes
-habilitar el redireccionamento de la misma manera::
+Si estás utilizando HEAD, puedes habilitar el redireccionamento de la
+misma manera::
 
     >>> r = requests.post('http://github.com', allow_redirects=True)
     >>> r.url
@@ -386,7 +416,7 @@ habilitar el redireccionamento de la misma manera::
 Timeouts
 --------
 
-Con el parámetro ``timeout`` puedes indicarle a Requests que deje de 
+Con el parámetro ``timeout`` puedes indicarle a Requests que deje de
 esperar por una respuesta luego de un número determinado de segundos::
 
     >>> requests.get('http://github.com', timeout=0.001)
@@ -397,18 +427,21 @@ esperar por una respuesta luego de un número determinado de segundos::
 
 .. admonition:: Note:
 
-    ``timeout`` afecta únicamente el procesmo mismo de conexión, no el tiempo de descarga 
-    del cuerpo de la respuesta.
+    ``timeout`` no es el tiempo límite que la respuesta completa se
+    descargue; de lo contrario, una excepción se levanta si el servidor
+    no ha dado una respuesta dentro de los seguntos establecidos por
+    ``timeout`` (más precisamente, si no se han recibido bytes en el
+    socket por ``timeout`` segundos)
 
 
 Errores y excepciones:
 ----------------------
 
-En el caso de un problema de red (falla de DNS, conexión rechazada, etc), 
+En el caso de un problema de red (falla de DNS, conexión rechazada, etc),
 Requests levantará una excepción tipo :class:`ConnectionError`.
 
-En el caso de una respuesta HTTP inválida, Requests levantará 
-una excepción tipo :class::`HTTPError`.
+En el caso de una respuesta HTTP inválida, Requests levantará una
+excepción tipo :class::`HTTPError`.
 
 Si se cumple el tiempo de espera (*timeout*), se levantará una
 excepción tipo :class:`Timeout`.
@@ -421,4 +454,4 @@ la clase :class:`requests.exceptions.RequestException`.
 
 -----------------------
 
-Lista para más? Mira la sección :ref:`avanzado <advanced>`.
+¿Listo para más? Mira la sección :ref:`avanzado <advanced>`.
