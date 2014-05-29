@@ -243,10 +243,11 @@ Requests hace que sea simple subir archivos Multiparte::
       ...
     }
 
-Puedes establecer el nombre del archivo explícitamente::
+Puedes establecer explícitamente el nombre del archivo, _content_type_ y
+encabezados::
 
     >>> url = 'http://httpbin.org/post'
-    >>> files = {'file': ('report.xls', open('report.xls', 'rb'))}
+    >>> files = {'file': ('report.xls', open('report.xls', 'rb'), 'application/vnd.ms-excel', {'Expires': '0'})}
 
     >>> r = requests.post(url, files=files)
     >>> r.text

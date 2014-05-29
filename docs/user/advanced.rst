@@ -257,7 +257,7 @@ Requests soporta subidas por *streaming*, lo cual permite enviar archivos
 pesados sin leerlos en memoria. Para usar esta funcionalidad, simplemente
 debes proveer un objeto tipo archivo para el cuerpo de la petición::
 
-    with open('massive-body') as f:
+    with open('massive-body', 'rb') as f:
         requests.post('http://some.url/streamed', data=f)
 
 
@@ -728,3 +728,30 @@ de Python. Dos excelentes ejemplos son `grequests`_ y `requests-futures`_.
 
 .. _`grequests`: https://github.com/kennethreitz/grequests
 .. _`requests-futures`: https://github.com/ross/requests-futures
+
+Timeouts
+--------
+
+La mayoría de las peticiones externas deben tener un timeout anexo, en caso de que el servidor no esté respondiendo a tiempo.
+
+El timeout **connect** es el número de segundos que Request esperará para que tu cliente establesca una conexión a una máquina remota (correspondiente al método `connect()`_) en el socket. Es una buena práctica establecer tiempos de conexión a algo un poco más grande que un múltiplo de 3, para permitir el tiempo por defecto  `TCP
+retransmission window <http://www.hjp.at/doc/rfc/rfc2988.txt>`_.
+
+Una vez que tu cliente se ha conectado al servidor y enviado la petición HTTP, el timeout **read** es el número de segundos que el cliente esperará para que el servidor envie una respuesta. (Específicamente, es el número de segundos que el cliente esperará *entre* los bytes enviados desde el servidor. En la práctica, esto es el tiempo antes de que el servidor envíe el primer byte).
+
+Si especificas un solo volor para el timeout, como esto::
+
+    r = requests.get('https://github.com', timeout=5)
+
+El valor de timeout será aplicado a ambos timeouts: ``connect`` y ``read``. Especifique una tupla si deseas establecer el valor separadamente::
+
+    r = requests.get('https://github.com', timeout=(3.05, 27))
+
+Si el servidor remoto es demasiado lente, puedes decirle a Request que espere por siempre la respuesta, pasando None como el valor de timeout.
+
+.. code-block:: python
+
+    r = requests.get('https://github.com', timeout=None)
+
+.. _`connect()`: http://linux.die.net/man/2/connect
+
