@@ -257,7 +257,7 @@ Requests soporta subidas por *streaming*, lo cual permite enviar archivos
 pesados sin leerlos en memoria. Para usar esta funcionalidad, simplemente
 debes proveer un objeto tipo archivo para el cuerpo de la petición::
 
-    with open('massive-body') as f:
+    with open('massive-body', 'rb') as f:
         requests.post('http://some.url/streamed', data=f)
 
 
