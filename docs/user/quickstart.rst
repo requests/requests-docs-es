@@ -408,7 +408,7 @@ usando el parámetro ``allow_redirects``::
 Si estás utilizando HEAD, puedes habilitar el redireccionamento de la
 misma manera::
 
-    >>> r = requests.post('http://github.com', allow_redirects=True)
+    >>> r = requests.head('http://github.com', allow_redirects=True)
     >>> r.url
     'https://github.com/'
     >>> r.history
