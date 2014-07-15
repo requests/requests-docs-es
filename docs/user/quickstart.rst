@@ -337,9 +337,10 @@ diccionario::
         'content-type': 'application/json; charset=utf-8'
     }
 
-Este diccionario es especial: está hecho únicamente de cabeceras HTTP. De acuerdo
-con el `RFC 2616 <http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html>`_, las
-cabeceras HTTP no diferencian entre mayúsculas y minúsculas.
+Este diccionario es especial: está hecho únicamente para las cabeceras HTTP.
+De acuerdo con el `RFC 7230 <http://tools.ietf.org/html/rfc7230#section-3.2>`_
+, los nombres de las cabeceras HTTP no hacen distinción entre mayúsculas y
+minúsculas.
 
 Así que podemos acceder a las cabeceras utilizando letras mayúsculas o minúsculas::
 
@@ -407,7 +408,7 @@ usando el parámetro ``allow_redirects``::
 Si estás utilizando HEAD, puedes habilitar el redireccionamento de la
 misma manera::
 
-    >>> r = requests.post('http://github.com', allow_redirects=True)
+    >>> r = requests.head('http://github.com', allow_redirects=True)
     >>> r.url
     'https://github.com/'
     >>> r.history
