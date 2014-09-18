@@ -79,19 +79,20 @@ Contribuye
 ----------
 
 #. Busca temas abiertos o abre un tema nuevo para comenzar una discusión
-sobre una idea o un bug. Existe una etiqueta llamada *Contributor* *Friendly*
-(Amigable al Contribuyente), la cual es ideal para personas que aún no están familiarizadas con el código fuente.
+   sobre una idea o un bug. Existe una etiqueta llamada *Contributor* *Friendly*
+   (Amigable al Contribuyente), la cual es ideal para personas que aún no están
+   familiarizadas con el código fuente.
 #. Si te sietes incómodo o poco certero sobre algún tema o sobre tus
-modificaciones, sientete libre de enviar un correo a @sigmavirus24 y él
-felizmente  te ayudará vía correo electrónico, Skype, parejas remotas o con
-lo que estés más cómodo.
+   modificaciones, sientete libre de enviar un correo a @sigmavirus24 y él
+   felizmente te ayudará vía correo electrónico, Skype, parejas remotas o con
+   lo que estés más cómodo.
 #. Haz un *Fork* `al repositorio`_ en Github para empezar a realizarle
-cambios a la rama principal (*master* *branch*)  (o crea otra rama a partir
-de ella).
+   cambios a la rama principal (*master* *branch*)  (o crea otra rama a partir
+   de ella).
 #. Escribe una prueba que demuestre que el bug ha sido corregido o que la
-nueva característica funciona como se esperaba.
+   nueva característica funciona como se esperaba.
 #. Envía un *pull* *request* y molesta al mantenedor hasta que sea consolidado
- y publicado. :) Asegúrate de agregarte a la lista de autores AUTHORS_.
+   y publicado. :) Asegúrate de agregarte a la lista de autores AUTHORS_.
 
 .. _`al repositorio`: http://github.com/kennethreitz/requests
 .. _AUTHORS: https://github.com/kennethreitz/requests/blob/master/AUTHORS.rst
