@@ -132,8 +132,8 @@ Por ejemplo, para crear una imagen a partir de datos binarios en una
 respuesta, puedes usar el siguiente código::
 
     >>> from PIL import Image
-    >>> from StringIO import StringIO
-    >>> i = Image.open(StringIO(r.content))
+    >>> from io import BytesIO
+    >>> i = Image.open(BytesIO(r.content))
 
 
 Contenido de respuesta JSON
